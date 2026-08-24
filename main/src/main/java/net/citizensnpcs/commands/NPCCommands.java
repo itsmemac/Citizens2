@@ -489,8 +489,8 @@ public class NPCCommands {
             usage = "behavior [file.yml]",
             desc = "",
             modifiers = { "behavior" },
-            min = 1,
-            max = 1,
+            min = 2,
+            max = 2,
             permission = "citizens.npc.behavior")
     public void behavior(CommandContext args, CommandSender sender, NPC npc, @Arg(1) String file)
             throws CommandException {
