@@ -98,7 +98,7 @@ public class PufferFishController extends MobEntityController {
 
         @Override
         public boolean causeFallDamage(double f, float f1, DamageSource damagesource) {
-            if (npc == null || !npc.isFlyable())
+            if (npc == null || !npc.isFlyable() || npc.useMinecraftAI())
                 return super.causeFallDamage(f, f1, damagesource);
             return false;
         }
@@ -112,7 +112,7 @@ public class PufferFishController extends MobEntityController {
 
         @Override
         protected void checkFallDamage(double d0, boolean flag, BlockState iblockdata, BlockPos blockposition) {
-            if (npc == null || !npc.isFlyable()) {
+            if (npc == null || !npc.isFlyable() || npc.useMinecraftAI()) {
                 super.checkFallDamage(d0, flag, iblockdata, blockposition);
             }
         }
@@ -217,7 +217,7 @@ public class PufferFishController extends MobEntityController {
 
         @Override
         public boolean onClimbable() {
-            if (npc == null || !npc.isFlyable())
+            if (npc == null || !npc.isFlyable() || npc.useMinecraftAI())
                 return super.onClimbable();
             else
                 return false;
@@ -259,7 +259,7 @@ public class PufferFishController extends MobEntityController {
 
         @Override
         public void travel(Vec3 vec3d) {
-            if (npc == null || !npc.isFlyable()) {
+            if (npc == null || !npc.isFlyable() || npc.useMinecraftAI()) {
                 if (!NMSImpl.moveFish(npc, this, vec3d)) {
                     super.travel(vec3d);
                 }
