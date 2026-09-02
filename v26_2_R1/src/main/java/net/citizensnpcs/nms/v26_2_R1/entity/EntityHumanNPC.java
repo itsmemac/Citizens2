@@ -117,7 +117,6 @@ public class EntityHumanNPC extends ServerPlayer implements NPCHolder, Skinnable
         // NPC dies, we are done with the instance and it should be removed.
         if (dead)
             return;
-
         super.die(damagesource);
         CitizensAPI.getScheduler().runEntityTaskLater(EntityHumanNPC.this.getBukkitEntity(), () -> {
             level().removePlayerImmediately(EntityHumanNPC.this, RemovalReason.KILLED);

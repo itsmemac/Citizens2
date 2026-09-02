@@ -2944,7 +2944,7 @@ public class NMSImpl implements NMSBridge {
     private static final MethodHandle CHUNKMAP_UPDATE_PLAYER_STATUS = NMS.getMethodHandle(ChunkMap.class,
             "updatePlayerStatus", true, ServerPlayer.class, boolean.class);
     private static final MethodHandle CLIENT_LOADED_TIMEOUT_TIMER = NMS.getSetter(ServerGamePacketListenerImpl.class,
-            "clientLoadedTimeoutTimer");
+            "clientLoadedTimeoutTimer", false);
     public static final MethodHandle CONNECTION_DISCONNECT_LISTENER = NMS.getSetter(Connection.class,
             "disconnectListener");
     public static final MethodHandle CONNECTION_PACKET_LISTENER = NMS.getSetter(Connection.class, "packetListener");

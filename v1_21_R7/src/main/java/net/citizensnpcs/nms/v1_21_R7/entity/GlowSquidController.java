@@ -203,7 +203,7 @@ public class GlowSquidController extends MobEntityController {
 
         @Override
         public void travel(Vec3 vec3d) {
-            if (npc == null || !npc.isFlyable()) {
+            if (npc == null || !npc.isFlyable() || npc.useMinecraftAI()) {
                 super.travel(vec3d);
             } else {
                 NMSImpl.moveLogic(this, vec3d);
