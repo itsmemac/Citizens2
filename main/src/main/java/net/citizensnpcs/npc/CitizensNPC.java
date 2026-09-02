@@ -275,7 +275,7 @@ public class CitizensNPC extends AbstractNPC {
                 hr.updateText(this, getRawName());
             }
         }
-        updateCustomName();
+        updateCustomNameVisibility();
     }
 
     @Override
